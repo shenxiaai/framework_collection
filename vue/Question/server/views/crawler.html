@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%= title %></title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src=""></script>
+	<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+	<script src="js/crawler.js"></script>
+</head>
+<body>
+	<div class="crawlerPage">
+		<form method="post" id="crawlerUrlForm">
+			<div class="form al">
+				<label>请输入书列表url</label>
+				<input id="bookListUrl" type="text" name="url">
+			</div>
+			<div class="form al">
+				<select id="bookTipSelect">
+					<option value="小说"></option>
+					<option value="小说">小说</option>
+					<option value="爱情">爱情</option>
+					<option value="科幻">科幻</option>
+					<option value="悬疑">悬疑</option>
+					<option value="武侠">武侠</option>
+					<option value="幻想">幻想</option>
+					<option value="诗歌">诗歌</option>
+					<option value="文化">文化</option>
+					<option value="散文">散文</option>
+					<option value="随笔">随笔</option>
+					<option value="生活">生活</option>
+					<option value="美食">美食</option>
+					<option value="旅行">旅行</option>
+					<option value="画册">画册</option>
+					<option value="翻译作品">翻译作品</option>
+					<option value="短篇小说">短篇小说</option>
+					<option value="中篇小说">中篇小说</option>
+					<option value="长篇小说">长篇小说</option>
+					<option value="限时特价">限时特价</option>
+					<option value="新上架">新上架</option>
+					<option value="免费">免费</option>
+					<option value="今日特价">今日特价</option>
+					<option value="画册">画册</option>
+				</select>
+			</div>
+			<div class="form ac">
+				<button type="submit">抓取</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

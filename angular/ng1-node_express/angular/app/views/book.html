@@ -1,0 +1,110 @@
+<div class="padlr10 pt10">
+	<table class="table bookDataTable">
+		<thead>
+			<tr class="active">
+				<th>书名</th>
+				<th>作者</th>
+				<th class="text-center" width="60">编辑</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="book in bookData">
+				<td>{{book.bookname}}</td>
+				<td>{{book.bookauthor}}</td>
+				<td class="text-right">
+					<div class="btn-group btn-group-xs" role="group">
+						<button type="button" class="btn btn-default" ng-click="editBook(book._id, $index)"><span class="glyphicon glyphicon-pencil"></span></button>
+						<button type="button" class="btn btn-default" ng-click="delBookConfirm(book._id)"><span class="glyphicon glyphicon-trash"></span></button>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<center>
+		<nav>
+			<ul class="pagination pagination-sm" style="margin:5px 0;">
+				<li><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+				<li><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">5</a></li>
+				<li><a href="#">6</a></li>
+				<li><a href="#">7</a></li>
+				<li><a href="#">8</a></li>
+				<li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+			</ul>
+		</nav>
+	</center>
+
+
+
+	<hr>
+	<h4>{{editTitle}}书籍信息</h4>
+	<form name="bookForm" ng-submit="submitForm()" novalidate>
+		<div class="form-group">
+			<label>书名</label>
+			<input type="text" id="_bookname" class="form-control" placeholder="请输入书名" name="bookname" ng-class="{'error': bookForm.bookname.$error.required && bookForm.bookname.$touched}" ng-model="bookInfo.bookname" required>
+			<p class="tips error" ng-if="bookForm.bookname.$error.required && bookForm.bookname.$touched">书名不能为空</p>
+		</div>
+		<div class="form-group">
+			<label>作者</label>
+			<input type="text" id="_bookauthor" class="form-control" placeholder="请输入作者" name="bookauthor" ng-class="{'error': bookForm.bookauthor.$error.required && bookForm.bookauthor.$touched}" ng-model="bookInfo.bookauthor" required>
+			<p class="tips error" ng-if="bookForm.bookauthor.$error.required && bookForm.bookauthor.$touched">作者不能为空</p>
+		</div>
+		<div class="form-group">
+			<label>价格</label>
+			<input type="text" id="_bookprize" class="form-control" placeholder="请输入价格" name="bookprize" ng-class="{'error': bookForm.bookprize.$error.required && bookForm.bookprize.$touched}" ng-model="bookInfo.bookprize" required>
+			<p class="tips error" ng-if="bookForm.bookprize.$error.required && bookForm.bookprize.$touched">请输入价格</p>
+		</div>
+		<div class="form-group">
+			<label>作品简介</label>
+			<input type="text" id="_booksummary" class="form-control" placeholder="请输入作品简介" name="booksummary" ng-class="{'error': bookForm.booksummary.$error.required && bookForm.booksummary.$touched}" ng-model="bookInfo.booksummary" required>
+			<p class="tips error" ng-if="bookForm.booksummary.$error.required && bookForm.booksummary.$touched">请输入作品简介</p>
+		</div>
+		<div class="form-group">
+			<label>作者信息</label>
+			<input type="text" id="_authorinfo" class="form-control" placeholder="请输入作者信息" name="authorinfo" ng-class="{'error': bookForm.authorinfo.$error.required && bookForm.authorinfo.$touched}" ng-model="bookInfo.authorinfo" required>
+			<p class="tips error" ng-if="bookForm.authorinfo.$error.required && bookForm.authorinfo.$touched">请输入作者信息</p>
+		</div>
+		<div class="form-group">
+			<label>评分</label>
+			<input type="text" id="_bookscore" class="form-control" placeholder="请输入作品评分" name="bookscore" ng-class="{'error': bookForm.bookscore.$error.required && bookForm.bookscore.$touched}" ng-model="bookInfo.bookscore" required>
+			<p class="tips error" ng-if="bookForm.bookscore.$error.required && bookForm.bookscore.$touched">请输入作品评分</p>
+		</div>
+		<div class="form-group text-center">
+			<button class="btn btn-primary" ng-disabled="bookForm.bookname.$error.required || bookForm.bookauthor.$error.required || bookForm.bookprize.$error.required || bookForm.booksummary.$error.required || bookForm.authorinfo.$error.required || bookForm.bookscore.$error.required">提交</button>
+			<button class="btn btn-primary" ng-show="delBtn" ng-click="delBookConfirm(book._id)">删除</button>
+		</div>
+		
+	</form>
+
+	<!-- 数据录入成功 弹出层 -->
+	<script type="text/ng-template" id="bookSubDislog">
+		<h1 class="ac fs18">温馨提示</h1>
+		<p class="fs14">数据录入成功！</p>
+		<div class="form-group text-center">
+			<button class="btn text-center" ng-click="closeThisDialog()">确定</button>
+		</div>
+	</script>
+
+	<!-- 提示删除数据 弹出层 -->
+	<script type="text/ng-template" id="bookDelConfirmDislog">
+		<h1 class="ac fs18">警告</h1>
+		<p class="fs14">你确定要删除这条数据吗？</p>
+		<div class="form-group text-center">
+			<button class="btn text-center" ng-click="closeThisDialog()">取消</button>
+			<button class="btn text-center" ng-click="delBookBtn(deleId) && closeThisDialog()">确定</button>
+		</div>
+	</script>
+
+	<!-- 数据删除成功 弹出层 -->
+	<script type="text/ng-template" id="bookDelDislog">
+		<h1 class="ac fs18">温馨提示</h1>
+		<p class="fs14">数据删除成功！</p>
+		<div class="form-group text-center">
+			<button class="btn text-center" ng-click="closeThisDialog()">确定</button>
+		</div>
+	</script>
+</div>

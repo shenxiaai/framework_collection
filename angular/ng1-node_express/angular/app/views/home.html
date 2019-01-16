@@ -1,0 +1,73 @@
+<div class="page">
+	<div>
+		<div class="home-header">
+			<a href="" style="background-image: url(http://10.100.12.159:3000/images/3352.jpg)" class="banner home-banner"></a>
+			<ul class="banner-column-nav">
+				<li><a href="" data-permalink="data-permalink" class="lnk-column">专栏 ›</a></li>
+				<li><a href="" data-permalink="data-permalink" class="lnk-serial">连载 ›</a></li>
+			</ul>
+		</div>
+		<div class="list-cate">
+			<section class="showcase-wrapper">
+				<div class="cate-mod">
+					<a class="hd" href="https://read.douban.com/category/new" data-permalink="">
+						<h3> 新上架 <i class="icon-more"></i></h3>
+					</a>
+					<div class="books-con-outer">
+						<div class="books-con-inner">
+							<a data-permalink="" ng-repeat="brief in newCatogory | limitTo: 10" href="#/brief?bookid={{brief._id}}">
+								<div class="item-book">
+									<div class="cover"><img src="http://10.100.12.159:3000/images/{{brief.bookcover}}"></div>
+									<h3 class="book-title">{{brief.bookname}}</h3>
+									<p class="book-author">{{brief.bookauthor}}</p>
+									<p class="book-price">￥{{brief.bookprize}}</p>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="showcase-wrapper">
+				<div class="cate-mod">
+					<a class="hd" href="https://read.douban.com/category/new" data-permalink="">
+						<h3> 画册 <i class="icon-more"></i></h3>
+					</a>
+					<div class="books-con-outer">
+						<div class="books-con-inner">
+							<a data-permalink="" ng-repeat="brief in drawings | limitTo: 10" href="#/brief?bookid={{brief._id}}">
+								<div class="item-book">
+									<div class="cover"><img src="http://10.100.12.159:3000/images/{{brief.bookcover}}"></div>
+									<h3 class="book-title">{{brief.bookname}}</h3>
+									<p class="book-author">{{brief.bookauthor}}</p>
+									<p class="book-price">￥{{brief.bookprize}}</p>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="showcase-wrapper">
+				<div class="cate-mod">
+					<a class="hd" href="https://read.douban.com/category/new" data-permalink="">
+						<h3> 免费 <i class="icon-more"></i></h3>
+					</a>
+					<div class="books-con-outer">
+						<div class="books-con-inner">
+							<a data-permalink="" ng-repeat="brief in forFree | limitTo: 10" href="#/brief?bookid={{brief._id}}">
+								<div class="item-book">
+									<div class="cover"><img src="http://10.100.12.159:3000/images/{{brief.bookcover}}"></div>
+									<h3 class="book-title">{{brief.bookname}}</h3>
+									<p class="book-author">{{brief.bookauthor}}</p>
+									<p class="book-price">￥{{brief.bookprize}}</p>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</div>
+	</div>
+</div>

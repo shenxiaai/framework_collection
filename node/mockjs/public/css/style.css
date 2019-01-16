@@ -1,0 +1,13 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif, "Miscrosoft Yahei";
+}
+
+a {
+  color: #00B7FF;
+}
+
+.wrap{
+  margin: 0 auto;
+  width: 1300px;
+  background: #f2f2f2;
+}

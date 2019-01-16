@@ -1,0 +1,81 @@
+.Home{
+	padding: 2rem;
+	width: 100%;
+  background: #f2f2f2;
+	box-sizing: border-box;
+	.dialog-box{
+	  display: flex;
+	  justify-content: flex-start;
+	  margin-bottom: 2rem;
+	  width: 100%;
+	  .dialog80{
+	  	display: flex;
+	  	width: 80%;
+		  .icon{
+	  		padding-right: 2rem;
+	  		width: 8rem;
+		  	img{
+			  	width: 8rem;
+			  	height: 8rem;
+			  	border-radius: 50%;
+			  }
+		  }
+		  .dialog{
+		  	flex: 1;
+		  	padding: 2rem;
+		  	background: #fff;
+		  	color: #333;
+		  	font-size: 3rem;
+		  	border-radius: 1rem;
+		  	box-sizing: border-box;
+		  }
+		}
+	  &:nth-child(2n){
+		  justify-content: flex-end;
+		  .dialog80{
+		  	.icon{
+		  		padding-left: 2rem;
+		  		padding-right: 0;
+		  		order: 1;
+		  	}
+		  }
+	  }
+	}
+	.ipt-box{
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		display: flex;
+		align-items: center;
+		width: 100%;
+		height: 8rem;
+		background: #fff;
+		img{
+			width: 8rem;
+			height: 8rem;
+			border-radius: 50%;
+		}
+		input{
+			flex: 1;
+			height: 7rem;
+			border: 1px solid #ccc;
+			box-sizing: border-box;
+			/*&:before{
+				content: "";
+        pointer-events: none; /* 防止点击触发
+        box-sizing: border-box;
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        left: 0;
+        top: 0;
+        border-radius: 8px;
+        border:1px solid #999;
+        -webkit-transform: scale(0.5);
+        -webkit-transform-origin: 0 0;
+        transform: scale(0.5);
+        transform-origin: 0 0;
+			}*/
+		}
+	}
+}

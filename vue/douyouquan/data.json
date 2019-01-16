@@ -1,0 +1,16 @@
+{
+  "userInfo": [
+    {
+      "user_id": "1",
+      "nickname": "Anny"
+    },
+    {
+      "user_id": "2",
+      "nickname": "Andy"
+    },
+    {
+      "user_id": "3",
+      "nickname": "Anna"
+    }
+  ]
+}
